@@ -42,20 +42,20 @@ const myTeamList = [
 
      function createUl(){
 
-        const ulContainer = document.createElement("div");
+        const ulContainer = document.createElement("div"); //Sono partito col creare 6 ul
 
         for(let i=0; i < myTeamList.length; i++){
         
         const newUl = document.createElement("ul");
 
         for (let j = 0 ; j < 3; j++){
-            const liElements = document.createElement("li");
+            const liElements = document.createElement("li"); // Di questi 6 ul ognuno ha 3 li all'interno 
             if (j === 0) {
                 liElements.textContent = "Name: " + myTeamList[i].name;
               } else if (j === 1) {
                 liElements.textContent = "Role: " + myTeamList[i].role;
               } else if (j === 2) {
-                liElements.textContent = "Profile Photo: " + myTeamList[i].profilePhoto;
+                liElements.textContent = "Profile Photo: " + myTeamList[i].profilePhoto; // ho assegnato il valore del contenuto dell'array ad ogni li
               }
             newUl.appendChild(liElements)
         }
@@ -66,7 +66,10 @@ const myTeamList = [
      }
      
      const ulContainer = createUl();
+
      console.log(ulContainer);
+
      const container = document.getElementById("container");
+     
      container.appendChild(ulContainer);
 
