@@ -48,7 +48,8 @@ const myTeamList = [
         
         const newUl = document.createElement("ul");
 
-        for (let j = 0 ; j < 3; j++){
+        for (let j = 0 ; j < Object.keys(myTeamList[i]).length; j++){ // Object.keys(myTeamList[i]).length ---->Numero di chiavi presenti nell'oggetto
+
             const liElements = document.createElement("li"); // Di questi 6 ul ognuno ha 3 li all'interno 
             if (j === 0) {
                 liElements.textContent = "Name: " + myTeamList[i].name;
@@ -70,6 +71,6 @@ const myTeamList = [
      console.log(ulContainer);
 
      const container = document.getElementById("container");
-     
+
      container.appendChild(ulContainer);
 
