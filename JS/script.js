@@ -38,3 +38,35 @@ const myTeamList = [
 
      ];
      console.log(myTeamList)
+
+
+     function createUl(){
+
+        const ulContainer = document.createElement("div");
+
+        for(let i=0; i < myTeamList.length; i++){
+        
+        const newUl = document.createElement("ul");
+
+        for (let j = 0 ; j < 3; j++){
+            const liElements = document.createElement("li");
+            if (j === 0) {
+                liElements.textContent = "Name: " + myTeamList[i].name;
+              } else if (j === 1) {
+                liElements.textContent = "Role: " + myTeamList[i].role;
+              } else if (j === 2) {
+                liElements.textContent = "Profile Photo: " + myTeamList[i].profilePhoto;
+              }
+            newUl.appendChild(liElements)
+        }
+
+        ulContainer.appendChild(newUl);
+        }
+        return ulContainer;
+     }
+     
+     const ulContainer = createUl();
+     console.log(ulContainer);
+     const container = document.getElementById("container");
+     container.appendChild(ulContainer);
+
