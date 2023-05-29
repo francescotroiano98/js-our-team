@@ -1,3 +1,4 @@
+
 const myTeamList = [
        {
            name: 'Wayne Barnett ',
@@ -44,20 +45,29 @@ const myTeamList = [
      function createUl(){
 
         const ulContainer = document.createElement("div"); //Sono partito col creare 6 ul
-
+        ulContainer.classList.add("container-fluid")
+        ulContainer.classList.add("d-flex")
+        ulContainer.classList.add("flex-wrap")
+        ulContainer.classList.add("justify-content-between")
+        ulContainer.classList.add("p-4")
         for(let i=0; i < myTeamList.length; i++){
         
         const newUl = document.createElement("ul");
+        newUl.classList.add("card")
 
-        for (let j = 0 ; j < Object.keys(myTeamList[i]).length; j++){ // Object.keys(myTeamList[i]).length ---->Numero di chiavi presenti nell'oggetto
+        newUl.classList.add("p-0")
+        
+        for (let j = Object.keys(myTeamList[i]).length - 1 ; j >= 0 ; j--){ // Object.keys(myTeamList[i]).length ---->Numero di chiavi presenti nell'oggetto
 
             const liElements = document.createElement("li"); // Di questi 6 ul ognuno ha 3 li all'interno 
-            if (j === 0) {
-                liElements.textContent = "Name: " + myTeamList[i].name;
-              } else if (j === 1) {
-                liElements.textContent = "Role: " + myTeamList[i].role;
-              } else if (j === 2) {
+            if (j === 2) {
                 liElements.innerHTML = "<img src='img/" + myTeamList[i].profilePhoto + "' alt=''>";// ho assegnato il valore del contenuto dell'array ad ogni li
+              } else if (j === 0) {
+                liElements.textContent =  myTeamList[i].name;
+                
+              } else if (j === 1) {
+                liElements.textContent =  myTeamList[i].role;
+                
               }
             newUl.appendChild(liElements)
         }

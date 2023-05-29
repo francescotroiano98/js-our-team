@@ -4,3 +4,13 @@
     box-sizing: border-box;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+ul{
+    list-style: none;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    
+}
