@@ -37,6 +37,7 @@ const myTeamList = [
         },
 
      ];
+ 
      console.log(myTeamList)
 
 
@@ -56,7 +57,7 @@ const myTeamList = [
               } else if (j === 1) {
                 liElements.textContent = "Role: " + myTeamList[i].role;
               } else if (j === 2) {
-                liElements.textContent = "Profile Photo: " + myTeamList[i].profilePhoto; // ho assegnato il valore del contenuto dell'array ad ogni li
+                liElements.innerHTML = "<img src='img/" + myTeamList[i].profilePhoto + "' alt=''>";// ho assegnato il valore del contenuto dell'array ad ogni li
               }
             newUl.appendChild(liElements)
         }
